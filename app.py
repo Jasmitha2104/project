@@ -1,3 +1,4 @@
+
 import os
 from flask import Flask, render_template, request
 import re
@@ -21,7 +22,7 @@ def load_model_and_tokenizer():
     global model, tokenizer
     if model is None or tokenizer is None:
         try:
-            model = tf.keras.models.load_model('lstm_model.h5')
+            model = tf.keras.models.load_model('lstm_model.keras')
             model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
             print("Model loaded successfully.")
         except Exception as e:
